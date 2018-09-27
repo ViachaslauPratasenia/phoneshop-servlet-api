@@ -64,6 +64,16 @@
     <url-pattern>/checkout/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ComparePage</servlet-name>
+    <servlet-class>com.es.phoneshop.web.ComparePageServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ComparePage</servlet-name>
+    <url-pattern>/compare</url-pattern>
+  </servlet-mapping>
+
   <filter>
     <filter-name>DosFilter</filter-name>
     <filter-class>com.es.phoneshop.web.filters.DosFilter</filter-class>

@@ -33,6 +33,10 @@
     </tr>
   </c:forEach>
 </table>
+<form action="${pageContext.request.contextPath}/products" method="post">
+  <input type="text" name="searchQuery" value="">
+  <button type="submit" name="search" value="">Search</button>
+</form>
 
 <footer>
   <jsp:include page="/WEB-INF/pages/footer.jsp"/>

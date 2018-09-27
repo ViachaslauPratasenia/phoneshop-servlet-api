@@ -18,6 +18,10 @@
         <c:if test = "${not empty param.addQuantity}">
             Added ${param.addQuantity} products successfully.
         </c:if>
+        <c:if test = "${not empty param.compareProducts}">
+            Added to compare successfully.
+        </c:if>
+
         <table>
             <thead>
             <tr>
@@ -57,6 +61,9 @@
         </table>
     </form>
 </div>
+<form action="${pageContext.request.contextPath}/products" method="post">
+    <button type="submit" name="compare" value="">Add to compare</button>
+</form>
 <div class="footer">
     <jsp:include page="/WEB-INF/pages/footer.jsp"/>
 </div>

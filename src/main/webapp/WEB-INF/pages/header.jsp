@@ -14,5 +14,9 @@
         <a href="${pageContext.servletContext.contextPath}/cart">
             <p align="left">Cart page</p>
         </a>
+
+        <a href="${pageContext.servletContext.contextPath}/compare">
+            <p align="left">Compare page (items : )</p>
+        </a>
     </header>
 </html>

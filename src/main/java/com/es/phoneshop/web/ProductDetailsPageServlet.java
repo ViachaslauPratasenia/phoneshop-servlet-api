@@ -11,11 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ProductDetailsPageServlet extends HttpServlet {
     private ProductDAO productDAO;
     private CartService cartService;
+    private List<Product> compareProducts = new ArrayList<>();
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -64,6 +67,13 @@ public class ProductDetailsPageServlet extends HttpServlet {
             response.sendRedirect(request.getRequestURI() + "?addQuantity=" + quantity );
         } catch (NotEnoughException e) {
             exceptionError(product, request, response, NotEnoughException.NOT_ENOUGH_MESSAGE);
+        }
+
+        String compare = request.getParameter("compare");
+        if(compare != null){
+            compareProducts.add(product);
+            request.setAttribute("compareProducts", compareProducts);
+            response.sendRedirect(request.getPathInfo() + "/compare");
         }
     }
     private String getLastPathParameter(HttpServletRequest request) {
